@@ -15,7 +15,7 @@ didOpen: () => {
     const audio = new Audio("music/hbd.mpeg");
     audio.play().catch(e => console.log(e));
   });
-}
+},
     }).then((result) => {
             animationTimeline();
         }
