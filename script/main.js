@@ -18,8 +18,6 @@ didOpen: () => {
 }
     }).then((result) => {
             animationTimeline();
-        } else {
-            animationTimeline();
         }
     });
 });
