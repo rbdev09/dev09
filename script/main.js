@@ -8,17 +8,21 @@ window.addEventListener('load', () => {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes',
         cancelButtonText: 'No',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.querySelector('.song').play();
-            animationTimeline();
-        } else {
-            animationTimeline();
-        }
-    });
-});
+    didOpen: () => {
+  const confirmBtn = Swal.getConfirmButton();
+  const cancelBtn = Swal.getCancelButton();
 
+  confirmBtn.addEventListener("click", () => {
+    const audio = document.querySelector(".song"); // your audio class
+    audio.muted = false;
+    audio.play().catch(e => console.log(e));
+    animationTimeline();
+  });
 
+  cancelBtn.addEventListener("click", () => {
+    animationTimeline();
+  });
+}
 // animation timeline
 const animationTimeline = () => {
     // split chars that needs to be animated individually
