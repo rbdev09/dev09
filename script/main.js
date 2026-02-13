@@ -7,10 +7,16 @@ window.addEventListener('load', () => {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
+   cancelButtonText: 'No',
+
+didOpen: () => {
+  const btn = Swal.getConfirmButton();
+  btn.addEventListener("click", () => {
+    const audio = new Audio("music/hbd.mpeg");
+    audio.play().catch(e => console.log(e));
+  });
+}
     }).then((result) => {
-        if (result.isConfirmed) {
-            document.querySelector('.song').play();
             animationTimeline();
         } else {
             animationTimeline();
