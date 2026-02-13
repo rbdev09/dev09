@@ -21,6 +21,7 @@ didOpen: () => {
         }
     });
 });
+return;
 
 
 // animation timeline
